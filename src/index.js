@@ -10,7 +10,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     {/* <GlobalProvider> */}
-    <BrowserRouter>
+    <BrowserRouter basename='/movie_app' >
       <App />
     </BrowserRouter>
     {/* </GlobalProvider> */}

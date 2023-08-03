@@ -20,7 +20,7 @@ function App() {
     <>
       <Navbar />
       <Routes>
-        <Route path="/https://elmehdihn3112.github.io/ElmMovieApp/" element={<Popular />} />
+        <Route exact path="/movie_app" element={<Popular />} />
         <Route path="/:id" element={<MovieDetails />} />
         <Route path="/serie/:id" element={<SeriDetail />} />
         <Route path="top_rated" element={<TopRated />} />
