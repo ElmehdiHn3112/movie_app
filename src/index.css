@@ -1,0 +1,760 @@
+*{
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  background-color: #171717;
+  color: #fff;
+}
+body.dark{
+  background-color: #fff;
+  color: #000;
+}
+
+body {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+    
+}
+.navbar, h1{
+  transition-delay: 100ms;
+}
+/* search bar */
+
+/* From uiverse.io by @satyamchaudharydev */
+/* removing default style of button */
+
+.form button {
+  border: none;
+  background: none;
+  color: #8b8ba7;
+}
+
+/* styling of whole input container */
+.form {
+  --timing: 0.3s;
+  --width-of-input: 200px;
+  --height-of-input: 40px;
+  --border-height: 2px;
+  --input-bg: #fff;
+  --border-color: #2f2ee9;
+  --border-radius: 30px;
+  --after-border-radius: 1px;
+  position: relative;
+  width: var(--width-of-input);
+  height: var(--height-of-input);
+  display: flex;
+  align-items: center;
+  padding-inline: 0.8em;
+  border-radius: var(--border-radius);
+  transition: border-radius 0.5s ease;
+  background: var(--input-bg, #fff);
+  
+}
+.form.dark{
+  background: #000;
+  color: #fff;
+}
+.form.dark::placeholder{
+  color: #fff;
+}
+.form.dark .input{
+  color: #fff;
+}
+
+/* styling of Input */
+.input {
+  font-size: 0.9rem;
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  padding-inline: 0.5em;
+  padding-block: 0.7em;
+  border: none;
+}
+
+/* styling of animated border */
+.form:before {
+  content: "";
+  position: absolute;
+  background: var(--border-color);
+  transform: scaleX(0);
+  transform-origin: center;
+  width: 100%;
+  height: var(--border-height);
+  height: 3px;
+  left: 0;
+  bottom: 0;
+  border-radius: 1px;
+  transition: transform var(--timing) ease;
+}
+
+/* Hover on Input */
+.form:focus-within {
+  border-radius: var(--after-border-radius);
+}
+
+input:focus {
+  outline: none;
+}
+
+/* here is code of animated border */
+.form:focus-within:before {
+  transform: scale(1);
+}
+
+/* styling of close button */
+/* == you can click the close button to remove text == */
+.reset {
+  border: none;
+  background: none;
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* close button shown when typing */
+input:not(:placeholder-shown)~.reset {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* sizing svg icons */
+.form svg {
+  width: 17px;
+  margin-top: 3px;
+}
+
+
+/* search bar */
+
+/* dark mode switch */
+
+/* The switch - the box around the slider */
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 3.5em;
+  height: 2em;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  --background: #28096b;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--background);
+  -webkit-transition: .5s;
+  transition: .5s;
+  border-radius: 30px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.4em;
+  width: 1.4em;
+  border-radius: 50%;
+  left: 10%;
+  bottom: 15%;
+  -webkit-box-shadow: inset 8px -4px 0px 0px #fff000;
+  box-shadow: inset 8px -4px 0px 0px #fff000;
+  background: var(--background);
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+input:checked+.slider {
+  background-color: #522ba7;
+}
+
+input:checked+.slider:before {
+  -webkit-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  transform: translateX(100%);
+  -webkit-box-shadow: inset 15px -4px 0px 15px #fff000;
+  box-shadow: inset 15px -4px 0px 15px #fff000;
+}
+
+
+
+
+
+/* dark mode switch */
+
+a{
+  text-decoration: none;
+}
+h1{
+  margin-bottom: 3px;
+}
+h4{
+  margin: 0;
+}
+
+.card {
+
+  width: 250px;
+  box-shadow: 0 10px 12px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+
+ 
+    color: #fff;
+    background: #6e5dea;
+}
+
+.card .release_date{
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  background-color: rgb(96, 94, 174);;
+  color: #fff;
+  padding: 2px 10px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.card .vote_rate{
+    position: absolute;
+      top:283px;
+      right: 3px;
+      color: #fff;
+      background-color: #000;
+
+      padding: 5px 12px;
+      display: flex;
+      align-items: center;
+      font-size: 0.9rem;
+      font-weight: bold;
+      border-radius: 4px;
+}
+.card .vote_rate span{
+  margin-right: 5px;
+}
+.card .vote_rate img{
+  width: 15px;
+}
+
+.card h3{
+  margin: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+
+
+.card .details {
+  width: 100%;
+  margin-bottom: 25px;
+  padding: 0 10px;
+  text-align: center;
+
+}
+
+.card .img-top img {
+  width: 100%;
+  height: 300px;
+  object-fit: fill;
+}
+
+.cards {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 100px;
+}
+
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 100px;
+}
+.navbar .links {
+  display: flex;
+  align-items: center;
+  /* gap: 120px; */
+}
+.navbar .links a{
+  text-decoration: none;
+  color: black;
+  font-size: 1.2rem;
+  display: block;
+}
+.navbar .links a.active{
+  font-weight: bold;
+  color: #434242;
+}
+.navbar h1{
+  color: #A555EC;
+  margin: 0;
+  background-repeat: no-repeat;
+}
+
+
+.card--container{
+
+
+  position: relative;
+  padding: 25px;
+  background-size: cover;
+    background-position: center;
+    color: #fff;
+    height: 600px;
+}
+.moviedetail--card{
+  width: 300px;
+  height: 490px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.moviedetail--card .img-top{
+  height: 100%;
+}
+.moviedetail--card .img-top img{
+
+  width: 100%;
+  height: 100%;
+}
+.details{
+  width: 700px;
+  width: 60%;
+}
+.row{
+    display: flex;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.card--container::before{
+      content: "";
+        width: 100%;
+        position: absolute;
+        top: 0;
+        z-index: 0;
+        height: 100%;
+        background-color: #000000a8;
+        left: 0;
+}
+
+.cast--container {
+  position: relative;
+  width: 1000px;
+  height: 318px;
+  overflow-x: scroll;
+  /* margin-bottom: 200px; */
+}
+::-webkit-scrollbar{
+  background-color: #c9bce0;
+    border-radius: 10px;
+    height: 8px;
+    width: 10px;
+}
+::-webkit-scrollbar-track{
+
+border-radius: 10px;
+}
+::-webkit-scrollbar-thumb{
+  background-color: #a555ec99;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover{
+  background-color: #922deb99;
+
+}
+
+.cast--container--row{
+  display: flex;
+  gap: 20px;
+  /* margin-bottom: 200px;9 */
+  position: absolute;
+}
+.cast{
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 10px 12px rgba(0, 0, 0, 0.2);
+  width: 138px;
+}
+
+.cast img{
+  display: block;
+    width: 100%;
+    height: 207px;
+    object-fit: cover;
+}
+
+.cast .cast--footer{
+
+  padding: 20px;
+}
+
+.movie--crew{
+
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3,1fr);
+}
+.crew--person span{
+  display: block;
+}
+
+.crew--person--name{
+  font-weight: bold;
+}
+.crew---person--job{
+  color: #d3d0d8;
+}
+
+.movie--release_date{
+  color: #d3d0d8;
+      font-weight: lighter;
+}
+.movie--certif{
+  color: #d3d0d8;
+  padding: 1px 4px;
+  border: 1px solid grey;
+  border-radius: 3px;
+  font-weight: 500;
+
+}
+.genres{
+  position: relative;
+  margin: 0 15px;
+}
+.genres::before{
+    content: "";
+      position: absolute;
+      width: 5px;
+      top: 50%;
+      height: 5px;
+      transform: translateY(-50%);
+      left: -11px;
+      background-color: #fff;
+      border-radius: 50%;
+}
+.genres::after{
+    content: "";
+      position: absolute;
+      width: 5px;
+      top: 50%;
+      height: 5px;
+      transform: translateY(-50%);
+      right: -11px;
+      background-color: #fff;
+      border-radius: 50%;
+}
+
+.movie--rate{
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+.movie--tagline h3{
+  font-style: italic;
+  font-weight: 400;
+  color: #d3d0d8;
+}
+
+.cast--title{
+  margin-bottom: 10px;
+}
+
+.social-media--container{
+  
+  display: flex;
+  gap: 15px;
+  
+}
+.social-media--container  a img{
+position: relative;
+width: 30px;
+}
+.section2{
+
+  padding: 10px 100px;
+}
+
+.section {
+
+  display: flex;
+  gap: 45px;
+}
+
+.trailer-btn {
+
+  display: flex;
+  align-items: center;
+  gap: 10px
+  ;
+  cursor: pointer;
+  user-select: none;
+}
+.trailer-btn img{
+  width: 30px;
+}
+
+.movie--trailer_video{
+
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+.trailer--container{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.close--trailer-btn{
+
+  position: absolute;
+  right: 50px;
+  top: 50px;
+  cursor: pointer;
+}
+.right-side{
+  width: 250px;
+}
+.right-side div{
+  margin-bottom: 10px;
+}
+.right-side div span{
+  
+  display: block;
+  text-transform: capitalize;
+}
+.right-side div span:nth-child(1){
+
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+.keywords ul{
+  flex-wrap: wrap; 
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  width: 250px;
+}
+.keyword{
+padding: 6px;
+  background-color: #d3d0d8;
+  font-size: 0.8rem;
+  border-radius: 3px;
+  display: inline-block;
+  color: #403535;
+}
+
+.reviews--container{
+  max-width: 1000px;
+  padding: 20px 100px;
+}
+
+.review-box{
+      padding: 20px;
+        border: 1px solid #80808061;
+        border-radius: 5px;
+        box-shadow: 0 10px 12px #00000063;
+        min-height: 200px;
+}
+h2,h3{
+  text-transform: capitalize;
+}
+h2{
+  margin: 0;
+
+}
+
+.review--name-rate{
+
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.review--rate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1px;
+  background: #000;
+  color: #fff;
+  font-size: 0.9rem;
+  padding: 3px 10px;
+  border-radius: 6px;
+}
+
+.review--date{
+  color: grey;
+  margin-bottom: 10px;
+}
+
+.review--content{
+  line-height: 1.4;
+}
+.recomandations{
+  
+  max-width: 1000px;
+  height: 240px;
+  position: relative;
+  overflow-x: scroll;
+}
+
+.recomandations--boxs{
+display: flex;
+gap: 20px;
+position: absolute;
+}
+
+.recomandation{
+  width: 250px;
+}
+.recomandation img{
+  width: 100%;
+}
+.recomandation--flex{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+.padding{
+padding: 10px 100px;
+}
+/* footer{margin-top: 40px;
+  position: relative;
+  bottom: 0;
+  background-color: #434242;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+} */
+
+.flex{
+padding: 20px 100px;
+  display: flex;
+  justify-content: space-between;
+}
+/* .flex input {
+  border: 0;
+    padding: 10px 20px;
+    border-bottom: 2px solid #000;
+    width: 256px;
+}
+.flex input:focus{
+  outline: none;
+} */
+
+.links-cont {
+  position: relative;
+  padding: 10px;
+}
+
+.sous-links {
+  position: absolute;
+  top: 39px;
+  left: -19px;
+  width: 170px;
+  background-color: #fff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  box-shadow: 0 10px 12px rgba(0, 0, 0, 0.2);
+  z-index: 99;
+  display: none;
+}
+.sous-links.dark{
+  background-color: #000;
+  color: #fff;
+}
+.sous-links.dark a{
+  color: #fff;
+}
+.sous-links a{
+  margin-bottom: 10px;
+}
+
+.links-cont:hover .sous-links{
+  display: block;
+}
+.bold{
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+
+.person--cont {
+
+  display: flex;
+  gap: 30px;
+}
+
+.person--cont .person--img{
+  width: 300px;
+  overflow: hidden;
+}
+.person--cont .person--img img{
+  width: 100%;
+  height: 100%;
+  border-radius: 7px;
+}
+.person--movies--cont{
+  position: relative;
+  width: 100%;
+  height: 330px;
+  overflow-x: scroll;
+}
+.person--movies{
+  display: flex;
+  gap: 10px;
+  position: absolute;
+}
+
+.person--movies img {
+  width: 150px;
+  border-radius: 5px;
+}
+
+.person--mv-title{
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 0.9rem;
+}
+.card .people--img{
+  width: 300px;
+}
